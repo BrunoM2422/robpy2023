@@ -2,16 +2,10 @@
 
 import numpy as np
 import RobPy as rp
-import matplotlib.pyplot as plot
-from mpl_toolkits.mplot3d.axes3d import Axes3D
 
-a = np.asarray([[1,2,3]]) .T
-b = np.asarray([[4,5,6]]) .T
+po1 = rp.cria_vetor3([1, 0, 0])
+vs1 = rp.cria_vetor3([0, 1, 0])
+po2 = rp.cria_vetor3([0, 0, 1])
+vs2 = rp.cria_vetor3([1, 0, 0])
 
-fig: plot.Figure = plot.figure()
-ax = Axes3D(fig)
-fig.add_axes(ax)
-rp.plota_vetor3(a, color='m')
-
-plot.show()
-
+print(rp.ang_twist_dir_nc_rad(po1, vs1, po2, vs2) * 180 / np.pi)
